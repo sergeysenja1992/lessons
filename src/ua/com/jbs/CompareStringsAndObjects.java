@@ -48,6 +48,20 @@ public class CompareStringsAndObjects {
 
         System.out.println(d3.equals(d2));
 
+        System.out.println(factorial(10));
+
+    }
+
+
+    public static int factorial(int value) {
+        return sum(1, value, 1);
+    }
+
+    private static int sum(int current, int to, int currentSum) {
+        if (current <= to) {
+            return sum(current + 1, to, currentSum * current);
+        }
+        return currentSum;
     }
 
 }
