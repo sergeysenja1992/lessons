@@ -55,9 +55,17 @@ public class Main {
         GenericsBox<Number> number = new GenericsBox<>();
         GenericsBox<Integer> integer = new GenericsBox<>();
         copy(integer, number);
+
+        //copyBox(integer, number);
     }
 
     public static <T> void copy(GenericsBox<? extends T> src, GenericsBox<? super T> dest) {
+        for (var item: src.getObjects()) {
+            dest.add(item);
+        }
+    }
+
+    public static <T> void copyBox(GenericsBox<T> src, GenericsBox<T> dest) {
         for (var item: src.getObjects()) {
             dest.add(item);
         }
